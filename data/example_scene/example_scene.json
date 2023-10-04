@@ -1,0 +1,71 @@
+{
+    "Configuration": {
+        "startTime": 0.0,
+        "endTime": 5.0,
+        "timeStep": 0.004,
+        "fps": 120.0,
+        "minTimeStep": 0.0,
+        "maxTimeStep": 0.05000000074505806,
+        "gravity": [
+            0.0,
+            0.0,
+            -9.800000190734863
+        ],
+        "particleRadius": 0.009999999776482582,
+        "simulationMethod": 2,
+        "boundaryMethod": 2,
+        "eta": 0.0005000000237487257,
+        "minIterations": 2,
+        "maxIterations": 100,
+        "etaV": 0.0010000000474974513,
+        "minIterationsV": 1,
+        "maxIterationsV": 100,
+        "cflFactor": 1.0
+    },
+    "Fluid": {
+        "viscosityMethod": 1,
+        "surfaceTensionMethod": 3,
+        "adhesionMethod": -1,
+        "FluidModel": [
+            {
+                "viscosity": 0.03,
+                "boundaryViscosity": 0.002,
+                "surfaceTension": 0.15000000596046448,
+                "adhesion": 1.0,
+                "density0": 1000.0,
+                "fluidBlocks": [
+                    {
+                        "min": [
+                            -0.25,
+                            -0.25,
+                            -0.7285508513450623
+                        ],
+                        "max": [
+                            0.25,
+                            0.25,
+                            -0.22855085134506226
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Boundary": [
+        {
+            "box": [
+                {
+                    "min": [
+                        -0.7771198153495789,
+                        -0.7771198153495789,
+                        -0.7771198153495789
+                    ],
+                    "max": [
+                        0.7771198153495789,
+                        0.7771198153495789,
+                        0.7771198153495789
+                    ]
+                }
+            ]
+        }
+    ]
+}
