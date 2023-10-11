@@ -109,7 +109,7 @@ void Emitter::emitGroup(Real timeOffset)
         fObj->setNumActiveParticles(numActiveParticles + static_cast<uint>(group.size()));
         numParticles -= static_cast<uint>(group.size());
 
-        nextTimeEmit += spacing * static_cast<Real>(1.105) * dist / v; // To do: Tener en cuenta la gravedad proyectada sobre la velocidad (si g y v tienen la misma direccion g se tiene en cuenta por completo y el siguiente tiempo de emision sera mas pronto debido a que las particulas se aceleran mas)
+        nextTimeEmit += spacing * static_cast<Real>(1.105) * dist / v; // TODO: Tener en cuenta la gravedad proyectada sobre la velocidad (si g y v tienen la misma direccion g se tiene en cuenta por completo y el siguiente tiempo de emision sera mas pronto debido a que las particulas se aceleran mas)
     }
 }
 
