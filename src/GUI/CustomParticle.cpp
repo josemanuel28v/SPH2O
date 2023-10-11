@@ -1,6 +1,6 @@
-#include "CustomParticle.h"
-#include "GLTexture.h"
-#include "GLSLMaterial.h"
+#include "GUI/CustomParticle.h"
+#include "GUI/GLTexture.h"
+#include "GUI/GLSLMaterial.h"
 
 CustomParticle::CustomParticle(float radius) : Particle(radius)
 {

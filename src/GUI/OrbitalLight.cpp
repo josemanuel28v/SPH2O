@@ -1,4 +1,4 @@
-#include "OrbitalLight.h"
+#include "GUI/OrbitalLight.h"
 
 OrbitalLight::OrbitalLight(glm::vec3 center, glm::vec3 color, float linearAtt, float radius)
 {

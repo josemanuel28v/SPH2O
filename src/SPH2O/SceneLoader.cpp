@@ -1,15 +1,16 @@
-#include "SceneLoader.h"
+#include "SPH2O/SceneLoader.h"
+
+#include "Common/numeric_types.h"
+#include "Utils/Logger.h"
+#include "SPH2O/SPHSimulation.h"
 #include <fstream>
 #include <sstream>
 #include <iostream>
 #include <algorithm>
-#include "../Common/numeric_types.h"
-#include "Logger.h"
-#include "SPHSimulation.h"
 
 bool SceneLoader::readConfiguration(SimulationInfo& simData, const std::string& path)
 {
-    json config;
+    nlohmann::json config;
     std::ifstream file(path);
 
     if (file.is_open())
@@ -36,7 +37,7 @@ bool SceneLoader::readConfiguration(SimulationInfo& simData, const std::string& 
     }
 }
 
-void SceneLoader::readSceneInfo(SimulationInfo & simData, const json& config)
+void SceneLoader::readSceneInfo(SimulationInfo& simData, const nlohmann::json& config)
 {
     SceneInfo& sceneData = simData.sceneData;
 
@@ -76,7 +77,7 @@ void SceneLoader::readSceneInfo(SimulationInfo & simData, const json& config)
     }
 }
 
-void SceneLoader::readFluidInfo(SimulationInfo & simData, const json& config)
+void SceneLoader::readFluidInfo(SimulationInfo& simData, const nlohmann::json& config)
 {
     FluidInfo& fluidData = simData.fluidData;
 
@@ -144,7 +145,7 @@ void SceneLoader::readFluidInfo(SimulationInfo & simData, const json& config)
     }
 }
 
-void SceneLoader::readBoundaryInfo(SimulationInfo & simData, const json& config)
+void SceneLoader::readBoundaryInfo(SimulationInfo& simData, const nlohmann::json& config)
 {
     if (config.find("Boundary") == config.end()) return;
 
@@ -222,7 +223,7 @@ void SceneLoader::writeFluid()
 
     filename.insert(filename.length() - jsonext.length(), "_" + num);
 
-    json state;
+    nlohmann::json state;
     std::ofstream file(filename);
 
     if (file.is_open())

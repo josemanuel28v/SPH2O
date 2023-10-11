@@ -3,23 +3,27 @@ cmake_minimum_required(VERSION 3.2)
 project(SPH2O CXX)
 set(CMAKE_CXX_STANDARD 20)
 
+# Define symbol __STDC_LIB_EXT1__ for stb_image to use the secure version of sprint
+add_definitions(-D__STDC_LIB_EXT1__)
+
 # Include directories
 include_directories(
+    ${CMAKE_SOURCE_DIR}/inc
+    # Extern
+    ${CMAKE_SOURCE_DIR}/extern/
     ${CMAKE_SOURCE_DIR}/extern/glm/inc
     ${CMAKE_SOURCE_DIR}/extern/glfw/include
     ${CMAKE_SOURCE_DIR}/extern/glfw/deps
     ${CMAKE_SOURCE_DIR}/extern/eigen # Needed for RegularTriangleSampling
+    ${CMAKE_SOURCE_DIR}/extern/pugixml
 )
 
 # Source files to compile
-file(GLOB cpu_source_files 
+file(GLOB_RECURSE cpu_source_files 
     "${CMAKE_SOURCE_DIR}/src/*.cpp"
     "${CMAKE_SOURCE_DIR}/src/GUI/*.cpp"
     "${CMAKE_SOURCE_DIR}/src/SPH2O/*.cpp"
     "${CMAKE_SOURCE_DIR}/extern/RegularTriangleSampling/*.cpp")
-
-file(GLOB gpu_source_files 
-    "${CMAKE_SOURCE_DIR}/src/GUI/*.cu")
 
 add_executable(SPH2O ${cpu_source_files})
 
@@ -65,8 +69,9 @@ elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     endif()
 endif()
 
+# Avoid link warnings in Windows
 if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC") 
-    target_link_options(SPH2O PRIVATE "/NODEFAULTLIB:LIBCMT") # Avoid link warnings in Windows
+    target_link_options(SPH2O PRIVATE "/NODEFAULTLIB:LIBCMT")
 endif()    
 
 # Add subdirectory to build glfw library
@@ -75,6 +80,7 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/extern/glfw)
 # Find OpenMP
 find_package(OpenMP REQUIRED)
 
+# Add llvm support for OpenMP: unsigned int in loops and max in reduction
 if(OpenMP_CXX_FOUND AND CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     target_compile_options(SPH2O PRIVATE $<$<COMPILE_LANGUAGE:CXX>: /openmp:llvm>)
 endif()

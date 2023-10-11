@@ -1,4 +1,4 @@
-#include "Entity.h"
+#include "GUI/Entity.h"
 
 Entity::Entity()
 {

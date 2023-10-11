@@ -1,4 +1,4 @@
-#include "State.h"
+#include "GUI/State.h"
 #include <iostream>
 
 void State::addMSH(std::string id, MSH* msh)

@@ -1,5 +1,5 @@
-#include "GL4Render.h"
-#include "System.h"
+#include "GUI/GL4Render.h"
+#include "GUI/System.h"
 
 void GL4Render::setupObject(Object* obj)
 {

@@ -1,7 +1,7 @@
-#include "Object.h"
+#include "GUI/Object.h"
 #include "pugixml.hpp"
-#include "FactoryEngine.h"
-#include "utils.h"
+#include "GUI/FactoryEngine.h"
+#include "GUI/utils.h"
 #include <iostream>
 
 Object::Object(std::string fileName)

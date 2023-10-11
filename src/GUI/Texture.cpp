@@ -1,4 +1,4 @@
-#include "Texture.h"
+#include "GUI/Texture.h"
 
 glm::ivec2 Texture::getSize() const 
 {

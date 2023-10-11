@@ -1,4 +1,4 @@
-#include "InputManager.h"
+#include "GUI/InputManager.h"
 
 bool InputManager::isPressed(int key)
 {

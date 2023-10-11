@@ -8,8 +8,8 @@
 #include "GUI/Sphere3D.h"
 #include "GUI/ObjModel.h"
 #include "SPH2O/SPHSimulation.h"
-#include "SPH2O/InputParser.h"
-#include "SPH2O/Utilities.h"
+#include "Utils/InputParser.h"
+#include "Utils/Utilities.h"
 
 void setupGraphicSystem(SPHSimulation*);
 

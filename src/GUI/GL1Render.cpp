@@ -1,6 +1,6 @@
 #define GLAD_ONLY_HEADERS
-#include "common.h"
-#include "GL1Render.h"
+#include "GUI/common.h"
+#include "GUI/GL1Render.h"
 #include <iostream>
 
 GL1Render::GL1Render(int width, int height) : Render(width, height)

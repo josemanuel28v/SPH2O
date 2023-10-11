@@ -1,5 +1,4 @@
-#include "GLFWInputManager.h"
-
+#include "GUI/GLFWInputManager.h"
 
 GLFWInputManager::GLFWInputManager()
 {

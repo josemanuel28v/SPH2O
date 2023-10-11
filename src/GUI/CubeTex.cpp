@@ -1,6 +1,6 @@
-#include "CubeTex.h"
-#include "GLTexture.h"
-#include "FactoryEngine.h"
+#include "GUI/CubeTex.h"
+#include "GUI/GLTexture.h"
+#include "GUI/FactoryEngine.h"
 
 CubeTex::CubeTex()
 {

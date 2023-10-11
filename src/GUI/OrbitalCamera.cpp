@@ -1,4 +1,4 @@
-#include "OrbitalCamera.h"
+#include "GUI/OrbitalCamera.h"
 
 void OrbitalCamera::step(double deltaTime)
 {

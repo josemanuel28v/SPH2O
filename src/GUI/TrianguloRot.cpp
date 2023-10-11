@@ -1,5 +1,5 @@
-#include "TrianguloRot.h"
-#include "FactoryEngine.h"
+#include "GUI/TrianguloRot.h"
+#include "GUI/FactoryEngine.h"
 
 TrianguloRot::TrianguloRot()
 {

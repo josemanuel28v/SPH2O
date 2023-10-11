@@ -1,8 +1,10 @@
-#include "System.h"
-#include "GL1Render.h"
-#include "GL4Render.h"
-#include "GLFWInputManager.h"
-#include "FactoryEngine.h"
+#include "GUI/System.h"
+#include "GUI/GL1Render.h"
+#include "GUI/GL4Render.h"
+#include "GUI/GLFWInputManager.h"
+#include "GUI/FactoryEngine.h"
+#define STB_IMAGE_WRITE_IMPLEMENTATION
+#include "stb_image/stb_image_write.h"
 
 void System::initSystem()
 {
@@ -41,9 +43,7 @@ void System::removeObject(int objectIdx)
 	objects.erase(objects.begin() + objectIdx);
 }
 
-// to do: mover al render
-#define STB_IMAGE_WRITE_IMPLEMENTATION
-#include "stb_image_write.h"
+// TODO: mover al render
 void captureFramebufferToPNG(const char* filename, int width, int height) 
 {
 	GLsizei nrChannels = 3;

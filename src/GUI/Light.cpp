@@ -1,4 +1,4 @@
-#include "Light.h"
+#include "GUI/Light.h"
 
 Light::Light(glm::vec3 position, glm::vec3 color, Type type, float intensity, float linearAtt)
 {

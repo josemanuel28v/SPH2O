@@ -1,7 +1,7 @@
-#include "ObjModel.h"
-#include "GLTexture.h"
-#include "FactoryEngine.h"
-#include "../../extern/OBJLoader/OBJLoader.h"
+#include "GUI/ObjModel.h"
+#include "GUI/GLTexture.h"
+#include "GUI/FactoryEngine.h"
+#include "OBJLoader/OBJLoader.h"
 
 ObjModel::ObjModel(const std::string& path)
 {

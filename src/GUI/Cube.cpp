@@ -1,6 +1,6 @@
-#include "Cube.h"
-#include "GLTexture.h"
-#include "FactoryEngine.h"
+#include "GUI/Cube.h"
+#include "GUI/GLTexture.h"
+#include "GUI/FactoryEngine.h"
 
 Cube::Cube()
 {

@@ -1,6 +1,6 @@
-#include "GLSLMaterial.h"
-#include "GLTexture.h"
-#include "System.h"
+#include "GUI/GLSLMaterial.h"
+#include "GUI/GLTexture.h"
+#include "GUI/System.h"
 
 using renderType = RenderProgram::renderTypes_e;
 
@@ -176,7 +176,7 @@ void GLSLMaterial::prepareInstanced()
 	program->setMatrix("model", System::getModelMatrix());
 	program->setMatrix("view", System::getCamera()->getView());
 	program->setMatrix("proj", System::getCamera()->getProjection());
-	program->setFloat("radius", System::getSimulationSystem()->getPrototype(0)->getRadius()); //System::getParticleSystem()->getPrototype()->getRadius()); // to do: cuidado
+	program->setFloat("radius", System::getSimulationSystem()->getPrototype(0)->getRadius()); //System::getParticleSystem()->getPrototype()->getRadius()); // TODO: cuidado
 
 	// Light
 	program->setInt("numLights", static_cast<int>(System::getLights().size()));

@@ -1,6 +1,6 @@
-#include "GLTexture.h"
+#include "GUI/GLTexture.h"
 #define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
+#include "stb_image/stb_image.h"
 
 GLTexture::GLTexture() : Texture()
 {}
@@ -57,7 +57,7 @@ void GLTexture::load(std::string fileName)
 
 void GLTexture::load(std::string left, std::string right, std::string front, std::string back, std::string top, std::string bottom)
 {
-	// Se asume que todas las im�genes del cubemap tienen las mismas dimensiones
+	// Se asume que todas las imagenes del cubemap tienen las mismas dimensiones
 
 	int comp = 0;
 

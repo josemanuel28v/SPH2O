@@ -1,4 +1,4 @@
-#include "Mesh3D.h"
+#include "GUI/Mesh3D.h"
 
 uint Mesh3D::counter = 0;
 

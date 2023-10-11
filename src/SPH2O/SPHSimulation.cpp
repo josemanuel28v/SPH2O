@@ -1,18 +1,19 @@
-#include "SPHSimulation.h" 
-#include "WCSPHSolver.h"
-#include "PCISPHSolver.h"
-#include "DFSPHSolver.h"
-#include "Poly6.h"
-#include "Spiky.h"
-#include "ViscoK.h"
-#include "Cohesion.h"
-#include "Adhesion.h"
-#include "CubicSpline.h"
-#include "Logger.h"
-#include "SceneLoader.h"
-#include "AkinciBoundaryObject.h"
-#include "PCISPHBoundaryObject.h"
-#include "CubeBoundaryObject.h"
+#include "SPH2O/SPHSimulation.h" 
+#include "SPH2O/SPHSolver/WCSPHSolver.h"
+#include "SPH2O/SPHSolver/PCISPHSolver.h"
+#include "SPH2O/SPHSolver/DFSPHSolver.h"
+#include "SPH2O/Kernel/Poly6.h"
+#include "SPH2O/Kernel/Spiky.h"
+#include "SPH2O/Kernel/ViscoK.h"
+#include "SPH2O/Kernel/Cohesion.h"
+#include "SPH2O/Kernel/Adhesion.h"
+#include "SPH2O/Kernel/CubicSpline.h"
+#include "SPH2O/BoundaryObject/AkinciBoundaryObject.h"
+#include "SPH2O/BoundaryObject/PCISPHBoundaryObject.h"
+#include "SPH2O/BoundaryObject/CubeBoundaryObject.h"
+#include "SPH2O/SceneLoader.h"
+#include "Utils/Logger.h"
+
 #include <fstream>
 
 SPHSimulation* SPHSimulation::current = nullptr;
@@ -498,7 +499,7 @@ bool SPHSimulation::importFluidState(uint frame)
     // Importante: Por el momento se supone que solo hay un fluid object
     ////////////////////////////////////////////////////////////////////
 
-    json config;
+    nlohmann::json config;
     std::ifstream file(path);
 
     if (!file.is_open())

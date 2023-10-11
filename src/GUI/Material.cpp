@@ -1,4 +1,4 @@
-#include "Material.h"
+#include "GUI/Material.h"
 
 Material::~Material()
 {

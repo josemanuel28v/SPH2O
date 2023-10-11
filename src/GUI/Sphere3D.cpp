@@ -1,6 +1,6 @@
-#include "Sphere3D.h"
-#include "GLTexture.h"
-#include "FactoryEngine.h"
+#include "GUI/Sphere3D.h"
+#include "GUI/GLTexture.h"
+#include "GUI/FactoryEngine.h"
 
 Sphere3D::Sphere3D()
 {

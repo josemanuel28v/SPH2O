@@ -1,4 +1,4 @@
-#include "Camera.h"
+#include "GUI/Camera.h"
 
 Camera::Camera(ProjectionType type, glm::vec3 position, glm::vec3 worldUp, glm::vec3 lookAt)
 {
